@@ -22,7 +22,8 @@ const AddItem = () => {
         .then(res=>res.json())
         .then(data=>{
             alert('Your services added')
-            console.log(data)
+            console.log(data);
+            
         })
     }
     return (

@@ -23,21 +23,24 @@ const ReviewSend = () => {
             body:JSON.stringify(sendReview)
         })
         .then(res=>res.json())
-        .then(data=>{console.log(data)
+        .then(data=>{
+            console.log(data)
             toast('Successfully send your review')
-        alert('Your Review successfully send')}
+        alert('Your Review successfully send')
+        event.target.reset();}
+        
             )
     }
     return (
         <div className='bg-base-100'>
             <h2 className='text-2xl py-3 text-secondary'>
                 {
-                    `Hello ${user?user.displayName:"Mr/Ms"},Please Give Your Review here:`
+                    `Hello ${user && user.displayName?user.displayName:"Mr/Ms"},Please Give Your Review here:`
                 
                 }
                 </h2>
             <form  onSubmit={handleSendReview} className='py-7'>
-                        <input type="text" name='name' placeholder="Enter Your Name..." value={user?.displayName} className="input input-bordered input-lg w-full max-w-xs " required /><br />
+                        <input type="text" name='name' placeholder="Enter Your Name..." className="input input-bordered input-lg w-full max-w-xs " required /><br />
                         <input type="email" name='email' placeholder="abc @ gmail.com" value={user?.email} className="input input-bordered input-lg w-full max-w-xs mt-2 " required /><br />
                         <input type="text" name='img' placeholder="Please Give Your Image url"  className="input input-bordered input-lg w-full max-w-xs mt-2" required /><br />
                         <textarea type='text' name='review' placeholder={user? ` Dear ${user?.displayName}. Please Write Your Review ...` : `Dear Mr/Ms. Please Write Your Message...`} cols='42' rows='5' className=' rounded border w-full max-w-xs mt-2 text-center' required></textarea><br />

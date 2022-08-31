@@ -15,7 +15,7 @@ const Mobile = ({ mobile }) => {
                     <p className='text-secondary'>Brand:{brand}</p>
                     <p className='text-xl'>Price:{price}</p>
                     <p className='text-xl'>Quantity:{quantity}</p>
-                    <p className='text-xl'>Suplier Name:{supplier_name}</p>
+                    {/* <p className='text-xl'>Suplier Name:{supplier_name}</p> */}
                     {/* <p className='text-sm'>Description:{description}</p> */}
                     <div className='grid lg:grid-cols-2 sm:grid-cols-2 gap-5'>
                         <div>
